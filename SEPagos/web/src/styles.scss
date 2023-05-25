@@ -1,0 +1,67 @@
+// this is our just created themes.scss file, make sure the path to the file is correct
+@use "themes" as *;
+
+// framework component styles
+@use "@nebular/theme/styles/globals" as *;
+
+@import 'assets/scss/loader.scss';
+
+// install the framework styles
+@include nb-install() {
+  @include nb-theme-global();
+}
+
+:root {
+  // --primary-color: // verde oscuro #16972b;
+  // --secondary-color: // verde oscuro  #147624;
+  // --body-color:
+  --primary-color: #811d3d; // bordo #811d3d // beige #F6D5B4
+  --secondary-color: #9b254a;
+  --body-color: #f6d5b4;
+  --body-color-darker: #ffa78d;
+  --primary-success: #3bb443;
+  --primary-danger: #f32013;
+  --se-gray: #cdcdcd;
+  --se-green: #16972b;
+  --se-green-dark: #147624;
+}
+
+.text-gray {
+  color: darkgray;
+}
+
+.btn-primary:focus {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.025);
+}
+
+.btn-primary {
+  transition: transform 0.7s;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #ffffff;
+}
+
+// .spinner-color {
+//   color: var(--primary-color);
+// }
+
+@keyframes spinner-color {
+  0% {
+    border-color: var(--primary-color);
+  }
+  25% {
+    border-color: var(--secondary-color-color);
+  }
+  50% {
+    border-color: var(--body-color-darker);
+  }
+  75% {
+    border-color: var(--body-color);
+  }
+}

@@ -1,0 +1,41 @@
+::ng-deep .p-sidebar-left {
+  background-color: #363841;
+}
+
+.item-sidebar {
+  border-radius: 5px;
+  border: solid 1px var(--primary-color);
+  background-color: var(--primary-color);
+  padding: 6px;
+  color: var(--surface-900);
+}
+.item-sidebar:hover {
+  background-color: var(--yellow-600);
+  border: solid 1px var(--yellow-600);
+  cursor: pointer;
+}
+
+.item-route {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.container-item {
+  padding: 1px 0;
+  width: 100%;
+}
+
+.router-link-nav {
+  text-decoration: none;
+}
+.toolbar-displayer {
+  position: absolute;
+  height: 4vh;
+  width: 100%;
+  background-color: rgba(5, 5, 5, 0);
+}
+
+.non-display{
+  // visibility: hidden;
+  display: none;
+}

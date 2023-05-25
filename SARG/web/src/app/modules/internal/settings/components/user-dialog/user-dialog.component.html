@@ -1,0 +1,54 @@
+<div class="p-3">
+  <form [formGroup]="userForm">
+
+    <div class="grid p-fluid">
+      <div class="col-12 md:col-6">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+          <input type="text" formControlName="username" pInputText placeholder="Nombre del usuario">
+        </div>
+      </div>
+
+      <div class="col-12 md:col-6">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon">@</span>
+          <input type="email" formControlName="email" pInputText placeholder="Correo electrónico">
+        </div>
+      </div>
+
+      <div class="col-12 md:col-6">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+          <input type="text" formControlName="firstName" pInputText placeholder="Nombre">
+        </div>
+      </div>
+
+      <div class="col-12 md:col-6">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+          <input type="text" formControlName="lastName" pInputText placeholder="Apellido">
+        </div>
+      </div>
+
+      <div class="col-12 md:col-6">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
+          <input pPassword type="password" formControlName="password" [feedback]="false" [toggleMask]="true"
+            placeholder="Contraseña" style="width: 100%;" />
+        </div>
+      </div>
+
+      <div class="col-12 md:col-3" *ngIf="operation==='update'">
+        <p-toggleButton formControlName="resetPassword" [(ngModel)]="resetPassword" onLabel="Resetear"
+          offLabel="No resetear" [onIcon]="'pi pi-check'" offIcon="pi pi-times"></p-toggleButton>
+      </div>
+    </div>
+
+    <div class="w-full flex mt-3">
+      <div></div>
+      <div class="ml-auto">
+        <p-button type="submit" label="Confirmar" (click)="submitUserForm()"> </p-button>
+      </div>
+    </div>
+  </form>
+</div>

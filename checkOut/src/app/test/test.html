@@ -1,0 +1,30 @@
+<div class="slds-grid slds-grid_pull-padded slds-grid_vertical-align-center slds-m-top_large">
+  <div class="slds-col_padded">
+    <ngl-checkbox label="Required">
+      <input ngl type="checkbox" [(ngModel)]="required">
+    </ngl-checkbox>
+  </div>
+  <div class="slds-col_padded">
+    <ngl-checkbox label="Error">
+      <input ngl type="checkbox" [(ngModel)]="hasError">
+    </ngl-checkbox>
+  </div>
+  <div class="slds-col_padded">
+    <ngl-checkbox label="Disabled">
+      <input ngl type="checkbox" [(ngModel)]="disabled">
+    </ngl-checkbox>
+  </div>
+</div>
+<div class="slds-grid slds-grid_pull-padded slds-grid_vertical-align-center slds-m-top_large">
+  <div class="slds-col_padded">
+    <ngl-input label="Input Label" fieldLevelHelpTooltip="Some helpful information">
+      <input ngl type="input" [required]="required" [disabled]="disabled" placeholder="Placeholder Text">
+    </ngl-input>
+  </div>
+  <div class="slds-col_padded">
+    <ng-template #customInput><i>Template Label</i></ng-template>
+    <ngl-input [label]="customInput">
+      <input ngl type="input" [required]="required" [disabled]="disabled" value="Lorem Ipsum">
+    </ngl-input>
+  </div>
+</div>

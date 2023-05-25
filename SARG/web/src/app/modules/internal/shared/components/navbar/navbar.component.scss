@@ -1,0 +1,195 @@
+$navbar-collased-width: 60px;
+$navbar-expanded-width: 250px;
+
+::ng-deep .p-sidebar-left {
+  background-color: #363841;
+}
+
+.item-sidebar {
+  border-radius: 3px;
+  border: solid 1px #3e404c;
+  padding: 6px;
+  background-color: var(--primary-color);
+  color: white;
+}
+.item-sidebar:hover {
+  background-color: #3a3d50;
+  border: solid 1px #2e386f;
+  cursor: pointer;
+}
+
+.item-route {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.container-item {
+  padding: 5px 0;
+  width: 100%;
+}
+
+.router-link-nav {
+  text-decoration: none;
+}
+
+::ng-deep
+  .panel-menu
+  > .p-panelmenu
+  .p-panelmenu-panel
+  .p-panelmenu-header
+  > a {
+  border-radius: 6px;
+}
+::ng-deep .panel-menu > .p-panelmenu .p-panelmenu-header > a {
+  color: #ffffff;
+  border: 1px solid #ffffff00;
+  border-radius: 6px;
+  background: #ffffff00;
+  padding: 0.35rem 0.1rem;
+}
+::ng-deep .panel-menu > .p-panelmenu .p-panelmenu-header.p-highlight > a {
+  background: #ffffff00;
+  border: 1px solid #ffffff00;
+  border-radius: 6px;
+
+  color: #ffffff;
+}
+::ng-deep .panel-menu > .p-panelmenu .p-panelmenu-content {
+  border: 1px solid #ffffff00;
+  background: #ffffff00;
+}
+::ng-deep .panel-menu > .p-menuitem .p-menuitem-link .p-menuitem-text {
+  color: #ffffff;
+}
+::ng-deep
+  .panel-menu
+  > .p-panelmenu
+  .p-panelmenu-content
+  .p-menuitem
+  .p-menuitem-link
+  .p-menuitem-text {
+  color: #ffffff;
+}
+
+::ng-deep .cerrar-sesion-dialog > * > .p-button {
+  background: var(--primary-dark);
+  border: 1px solid var(--primary-dark);
+}
+
+::ng-deep .cerrar-sesion-dialog > * > .p-confirm-dialog-message {
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 0 !important;
+}
+
+@media screen and (max-width: 960px) {
+  ::ng-deep .p-menubar-button {
+    display: none !important;
+  }
+}
+
+::ng-deep .p-sidebar-content {
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+::ng-deep .p-sidebar-content::-webkit-scrollbar {
+  display: none;
+}
+
+::ng-deep .header {
+  margin-top: 25px;
+  border-bottom: 1px solid #ffffff;
+}
+::ng-deep .header:hover {
+  background: none;
+}
+::ng-deep .p-panelmenu-header.header > a > span {
+  color: gray;
+}
+::ng-deep .p-panelmenu-header.header > a {
+  cursor: default;
+}
+::ng-deep .header > a:hover:active {
+  background: #2e386f;
+}
+::ng-deep .p-menubar {
+  border-radius: 0;
+}
+::ng-deep .p-panelmenu .p-panelmenu-header > a .p-panelmenu-icon {
+  display: none;
+}
+
+::ng-deep .sidebar-expanded > .p-sidebar {
+  width: $navbar-expanded-width;
+  transition: all 0.75s;
+}
+::ng-deep .sidebar-collapsed > .p-sidebar {
+  width: $navbar-collased-width;
+  transition: all 1.25s;
+}
+
+::ng-deep .sidebar-collapsed .logo-expanded {
+  display: none !important;
+
+}
+::ng-deep .sidebar-expanded .logo-expanded {
+  display: block !important;
+}
+
+::ng-deep .sidebar-expanded .logo-collapsed {
+  display: none !important;
+}
+::ng-deep .sidebar-collapsed .logo-collapsed {
+  display: block !important;
+}
+.logo-collapsed{
+  max-width: calc($navbar-collased-width - 10px);
+}
+
+.logo {
+  min-height: calc($navbar-collased-width - 7px);
+}
+
+::ng-deep .p-menuitem-text {
+  white-space: nowrap;
+}
+::ng-deep .sidebar-expanded .p-menuitem-text {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 1.25s ease-out;
+}
+::ng-deep .sidebar-collapsed .p-menuitem-text {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1.25s ease-in;
+}
+::ng-deep .sidebar-expanded .p-menuitem-icon {
+  margin-left: 4px;
+  transition: 0.50s ease-in;
+}
+::ng-deep .sidebar-collapsed .p-menuitem-icon {
+  margin-left: 1px ;
+  transition: 1s ease-out;
+}
+::ng-deep .p-sidebar {
+  position: fixed !important;
+}
+.container-content {
+  margin-left: 100px;
+  margin-right: 20px;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+::ng-deep .p-sidebar .p-sidebar-header{
+  padding: 0;
+}
+::ng-deep .p-sidebar .p-sidebar-content{
+  padding-top: 1rem !important;
+}
+.sidebar-collapsed .title-menu{
+  visibility: hidden;
+}

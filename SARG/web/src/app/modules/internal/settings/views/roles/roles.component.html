@@ -1,0 +1,43 @@
+<navbar>
+
+  <slot-content>
+
+    <h1>Roles</h1>
+
+    <div class="block">
+      <div class="flex w-full">
+        <div></div>
+        <div class="ml-auto">
+          <button pButton class="btn-add" [disabled]="roleSelected" (click)="addRole()"> Nuevo rol</button>
+        </div>
+      </div>
+
+      <div class="p-card mt-2 pb-5">
+        <role-simple-selector [roles]="roles" (eventRoleSelected)="onRoleSelected($event)"
+        (eventRoleUnselected)="onRoleUnselected()"></role-simple-selector>
+
+        <div class="mt-5 px-4 block" *ngIf="roleSelected && !actionSelected">
+          <h3>Acciones</h3>
+
+          <div class="block">
+            <div class="mt-2"><button pButton class="btn-action" (click)="editRole()"> Editar rol</button></div>
+            <div class="mt-2"><button pButton class="btn-action" (click)="configPermissions()"> Configurar permisos</button></div>
+            <div class="mt-2"><button pButton class="btn-action btn-danger"  (click)="disableRole()"> Deshabilitar rol</button></div>
+          </div>
+
+        </div>
+
+        <div *ngIf="actionSelected" style="padding: 0 25px;">
+          <hr />
+        </div>
+
+        <div *ngIf="actionSelected==='permissions'">
+          <permissions-picker [assigned]="permissionsAssigned" [unassigned]="permissionsUnassigned"
+            (eventFinalized)="savePermissionsAssigned($event)"></permissions-picker>
+        </div>
+
+      </div>
+    </div>
+
+  </slot-content>
+</navbar>

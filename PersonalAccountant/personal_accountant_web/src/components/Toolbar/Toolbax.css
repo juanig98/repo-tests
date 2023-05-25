@@ -1,0 +1,7 @@
+.Toolbar {
+  min-height: 8vh;
+  width: calc(100vw - 30px);
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+}

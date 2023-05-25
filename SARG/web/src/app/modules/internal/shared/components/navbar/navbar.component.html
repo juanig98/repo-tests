@@ -1,0 +1,66 @@
+<!-- Menú superior -->
+<p-menubar [style]="{'background-color':'#363841','border-color':'#363841'}">
+
+  <ng-template pTemplate="start">
+    <div class="flex" style="align-items: center;">
+      <div class="mr-2">
+        <p-button type="text" (click)="displaySidebar=true" icon="pi pi-bars"
+          [style]="{'background-color':'#ffffff00','border-color':'#ffffff00', color:'var(--surface-50)'}">
+        </p-button>
+      </div>
+      <div class="ml-5">
+        <span class="text-white" style="font-size: 21px;font-weight: bold;">{{ titleNavbar }}</span>
+      </div>
+    </div>
+  </ng-template>
+
+
+  <ng-template pTemplate="end">
+    <div class="inline-flex" style="align-items: center;color:var(--surface-50)">
+      <div class="mr-4 text-center block">
+        <div class="font-bold text-xl">{{ user ? user.username : ''}}</div>
+        <div class="text-xs mt-1"> {{ user ? user.firstName + ' ' + user.lastName : '""' }} </div>
+      </div>
+    </div>
+  </ng-template>
+
+</p-menubar>
+
+
+<!-- Menu de navegación lateral -->
+<!-- [(visible)]="displaySidebar" -->
+<div class="flex">
+
+  <p-sidebar [visible]="true" [showCloseIcon]="false" (mouseover)="displaySidebar=true"
+    (mouseleave)="displaySidebar=false" [modal]="false"
+    [class]="{'sidebar-collapsed': !displaySidebar,  'sidebar-expanded': displaySidebar}">
+
+    <div class="mb-2 block logo logo-expanded" style="align-items: center;">
+      <img src="assets/images/public/logo.png" alt="" style="width: 100%;">
+    </div>
+    <div class="mb-2 block logo logo-collapsed" style="align-items: center;">
+      <img src="assets/images/icons/logo-ico.png" alt="" style="width: 30px;">
+    </div>
+    <div class="text-center" style="color: whitesmoke">
+      <p class="title-menu">Menú</p>
+      <hr>
+    </div>
+    <p-panelMenu [transitionOptions]="'120ms'" [model]="sidebarMenu" [style]="{'width':'100%'}" class="panel-menu">
+    </p-panelMenu>
+  </p-sidebar>
+  <a href="#" id="sidebar-toggle"></a>
+
+
+  <div class="container-content">
+    <p-messages [(value)]="messages"></p-messages>
+    <ng-content select="slot-content">
+
+    </ng-content>
+  </div>
+</div>
+
+<p-confirmDialog [closable]="false" key="cerrarSesion" styleClass="cerrar-sesion-dialog"></p-confirmDialog>
+<p-confirmDialog [closable]="false"></p-confirmDialog>
+<p-toast [key]="TOAST_KEY"></p-toast>
+
+<chat></chat>

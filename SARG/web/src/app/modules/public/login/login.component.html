@@ -1,0 +1,60 @@
+<div class="body-login">
+
+  <div class="login-wrapper">
+    <div class="login-box shadow-16 text-center">
+
+      <div class="white-panel" *ngIf="message">
+        <div class="my-5">
+          <h2>{{ message }}</h2>
+        </div>
+
+        <div class="my-2 text-center">
+          <p-button class="btn-login" [style]="{'background-color': '#0e5ea2','border': '1px solid #0e5ea2' }"
+            [routerLink]="['/']" label="Volver al inicio"> </p-button>
+          <div>
+          </div>
+        </div>
+      </div>
+
+      <div class="white-panel" *ngIf="!message">
+        <div class="w-100 mb-2 text-center title">
+          <div class="w-full | logo-container | cursor-pointer" [routerLink]="['/']">
+            <div class="w-full | text-center | px-2">
+              <img src="assets/images/public/logo.png" alt="" class="m-auto" width="200">
+            </div>
+          </div>
+        </div>
+
+        <form [formGroup]="loginForm" class="login-form">
+          <div class="p-fluid">
+            <div class="field col-12 p-mt-1">
+              <span class="p-float-label">
+                <input pInputText #inputUsername formControlName="username">
+                <label class="color-blue" for="float-input"> Usuario</label>
+              </span>
+            </div>
+
+            <div class="field col-12 p-mt-1">
+              <span class="p-float-label">
+                <p-password formControlName="password" [feedback]="false" [toggleMask]="true"></p-password>
+                <label class="color-blue" for="float-input">Contraseña</label>
+              </span>
+            </div>
+
+          </div>
+
+          <div class="mt-2">
+
+            <div class="ml-auto">
+              <button pButton class="btn btn-primary"
+                #btnLogin (click)="login()" type="submit" [loading]="isLoadingRegistrarse" label="Ingresar"
+                [disabled]="loginForm.invalid || disableBtnSubmit"> </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p-toast position="bottom-center"></p-toast>

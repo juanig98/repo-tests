@@ -1,0 +1,24 @@
+<navbar>
+
+  <slot-content>
+
+    <div class="p-card my-3 p-3">
+
+
+      <div class="p-1 grid gap-1">
+        <div class="col w" style="min-width: 300px;">
+          <input-simple-search (onSearch)="onSearch($event)"></input-simple-search>
+        </div>
+        <div class="col-fixed w-auto">
+          <button pButton class="btn-add" (click)="addProduct()"> Nuevo</button>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <products-table [products]="products" ></products-table>
+      </div>
+
+    </div>
+
+  </slot-content>
+</navbar>

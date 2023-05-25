@@ -1,0 +1,15 @@
+@import "./theme.scss";
+@import "./buttons.scss";
+@import "./texts.scss";
+@import "./miscellaneous.scss";
+
+.ox-scroll {
+  overflow-y: hidden;
+  overflow-x: scroll !important;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.ox-scroll::-webkit-scrollbar {
+  display: none;
+}

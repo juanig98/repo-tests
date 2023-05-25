@@ -1,0 +1,15 @@
+.btn-logout {
+  background-color: var(--primary-color);
+  margin-left: auto;
+  color: #ffffff;
+}
+.btn-logout:hover {
+  background-color: var(--secondary-color);
+}
+
+.layout-header {
+  background-color: var(--primary-color);
+}
+.header-height {
+  height: 3.75rem !important;
+}

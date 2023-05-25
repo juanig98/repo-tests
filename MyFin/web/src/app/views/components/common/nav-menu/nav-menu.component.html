@@ -1,0 +1,41 @@
+<!-- Menú superior -->
+<div class="toolbar-displayer" (mouseover)="displayToolbar=true" (mouseout)="displayToolbar=false"></div>
+<p-toolbar
+  [style]="{'height':'8vh', 'padding': '3px 8px', 'position':'fixed','z-index': '500' ,'width':'100%', 'background-color':'var(--primary-gray)', 'border-color':'var(--primary-gray)'}"
+  (mouseover)="displayToolbar=true" (mouseout)="displayToolbar=false"
+  [ngClass]="{'non-display': !displayToolbar && !blockToolbar}">
+  <div class="p-toolbar-group-left">
+    <p-button type="text" label="Menú" (click)="displaySidebar=true;blockToolbar=true" icon="pi pi-bars"></p-button>
+  </div>
+
+  <div class="p-toolbar-group-right">
+    <p-button icon="pi pi-times" (click)="blockToolbar=true; logout()" title="Cerrar sesión"
+      styleClass="p-button-danger"></p-button>
+  </div>
+</p-toolbar>
+
+<!-- Menu de navegación lateral -->
+<p-sidebar [(visible)]="displaySidebar" (onHide)="onHideSidebar()" [showCloseIcon]="false"
+  [transitionOptions]="'450ms cubic-bezier(0, 0, 0.5, 1)'"
+  [style]="{'height':'fit-content', 'padding':'5px','border-bottom-right-radius':'8px'}">
+  <div class="p-mb-2 w-full p-text-center" style="align-items: center;">
+    <img [src]="logo" alt="" width="100%">
+  </div>
+  <div class="p-text-center" style="color: whitesmoke">
+    <p>Menú</p>
+    <hr>
+  </div>
+  <div class="container-item" *ngFor="let item of sidebarMenu">
+    <a [routerLink]="item.link" class="router-link-nav">
+      <div class="item-sidebar">
+        <div class="p-d-inline-flex" style="align-items: center;">
+          <i [ngClass]="item.icon ? item.icon : 'pi pi-circle-on'" style="margin-right: 12px;"></i>
+          <div>{{ item.label }}</div>
+        </div>
+      </div>
+    </a>
+  </div>
+</p-sidebar>
+
+<p-toast></p-toast>
+<p-confirmDialog></p-confirmDialog>

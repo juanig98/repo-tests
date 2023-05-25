@@ -1,0 +1,26 @@
+<navbar>
+
+  <slot-content>
+
+    <div class="p-card my-3 p-3">
+
+
+      <div class="p-1 grid gap-1">
+        <div class="col w" style="min-width: 300px;" >
+          <input-simple-search (onSearch)="onSearch($event)"></input-simple-search>
+        </div>
+        <div class="col-fixed w-auto">
+          <button pButton class="btn-add" (click)="addClient()"> Nuevo cliente</button>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <div *ngIf="loading" class="my-5"></div>
+        <clients-table [clients]="clients" [loading]="loading"></clients-table>
+        <div *ngIf="loading" class="my-5"></div>
+      </div>
+
+    </div>
+
+  </slot-content>
+</navbar>

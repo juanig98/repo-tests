@@ -1,0 +1,57 @@
+<div class="p-1" *ngIf="roles.length > 0 && !roleSelected">
+
+  <p-table [value]="_roles" selectionMode="single" [(selection)]="roleSelected" dataKey="id" [scrollable]="true"
+    scrollHeight="67.5vh" (onRowSelect)="onRoleSelected()" [globalFilterFields]="['translate']"
+    styleClass="p-datatable-sm">
+
+    <ng-template pTemplate="caption">
+      <span class="p-input-icon-left ml-auto">
+        <i class="pi pi-search"></i>
+        <input pInputText type="text" (input)="filter($event)" placeholder="Buscar rol" />
+      </span>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="max-width: 100px;">
+          <div class="w-full text-center" >ID</div>
+        </th>
+        <th>
+          <div class="w-full text-center">Nombre</div>
+        </th>
+        <th>
+          <div class="w-full text-center">Código</div>
+        </th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-role>
+      <tr [pSelectableRow]="role">
+        <td class="row-role" style="max-width: 100px;">
+          <div class="w-full text-center text-opaque ml-2">{{ role.id }}</div>
+
+        </td>
+        <td class="row-role">
+          <div> {{ role.translate }} </div>
+        </td>
+        <td class="row-role">
+          <div> {{ role.name }} </div>
+        </td>
+      </tr>
+
+    </ng-template>
+
+  </p-table>
+
+</div>
+
+
+<div *ngIf="roleSelected" class="p-4 flex ml-3" style="align-items: center;">
+  <div class="mr-3" style="max-width: 90%;">
+    Usuario seleccionado: <b> {{ roleSelected.translate }} [{{roleSelected.id}}] </b>
+  </div>
+  <div class="ml-auto">
+    <button pButton pRipple title="Quitar selección" type="button" icon="pi pi-times" (click)="onRoleUnselected()"
+      class="p-button-outlined p-button-rounded p-button-danger"></button>
+  </div>
+</div>

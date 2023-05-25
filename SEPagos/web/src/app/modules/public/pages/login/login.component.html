@@ -1,0 +1,57 @@
+<nb-layout>
+  <nb-layout-column style="padding: 0;">
+    <div class="body-login">
+
+      <div class="login-wrapper">
+
+        <nb-card class="login-box">
+          <nb-card-header>
+            <div class="w-100 mb-2 text-center title ">
+              <div class="w-full">
+                <div class="w-full | text-center">
+                </div>
+                <span class="mt-2 | uppercase text-center text-bold fs-4">
+                  Hola! Ingresa tus credenciales para acceder
+                </span>
+              </div>
+            </div>
+          </nb-card-header>
+
+          <nb-card-body style="padding: 3px;">
+            <form [formGroup]="loginForm" class="login-form">
+              <div class="mt-4 mb-3 text-center">
+                <label class="form-label fs-5 text-gray ">Usuario</label>
+                <input class="form-control text-center" placeholder="pepito" formControlName="username" />
+              </div>
+
+              <div class="mt-4 mb-3 text-center">
+                <label class="form-label fs-5 text-gray ">Contraseña</label>
+                <input class="form-control text-center" type="password" placeholder="********"
+                  formControlName="password" />
+              </div>
+
+
+              <div class="text-center">
+                <a [routerLink]="['/recuperar-clave']" class="forget-password-btn">
+                  ¿Olvidaste tu contraseña?
+                </a>
+              </div>
+
+              <div class="mt-5 mb-2 text-center">
+                <!-- <div *ngIf="disableBtnSubmit" class="text-center">
+                  <img [src]="loading" alt="" width="50">
+                </div> -->
+                <div *ngIf="disableBtnSubmit" class="loader"></div>
+                <button *ngIf="!disableBtnSubmit" class="btn btn-login" (click)="login()" type="submit"
+                  [disabled]="loginForm.invalid || disableBtnSubmit || isLoadingRegistrarse"> Ingresar </button>
+              </div>
+            </form>
+          </nb-card-body>
+        </nb-card>
+
+
+      </div>
+
+    </div>
+  </nb-layout-column>
+</nb-layout>

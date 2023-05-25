@@ -1,0 +1,12 @@
+.dot {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.green-status {
+  background-color: var(--green-status);
+}
+.red-status {
+  background-color: var(--red-status);
+}

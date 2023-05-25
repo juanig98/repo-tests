@@ -1,0 +1,69 @@
+@import "src/assets/icons/font-awesome/scss/font-awesome.scss";
+
+:root {
+  --primary-color: #0e5ea2;
+  --secondary-color: #034774;
+  --primary-dark: #072e4e;
+  --gray: #6d7981;
+  --gray-hover: #4c5358;
+  --primary-gradient: transparent linear-gradient(125deg, #034774, #1779c0) 0 0
+    no-repeat padding-box;
+  --chat-gradient: transparent linear-gradient(125deg, #004472, #003d69) 0 0
+    no-repeat padding-box;
+  --color-danger: #d63737;
+  --color-add: #147914;
+  --color-add-dark: #0b470b;
+  --color-action: #0d49b9;
+  --color-action-dark: #135ce2;
+  --green-status: #006e18d5;
+  --red-status: #b10000d5;
+}
+
+body {
+  background-color: var(--blue-800);
+  margin: 0;
+  padding: 0;
+  color: var(--surface-50);
+  overflow-x: scroll;
+
+  font-family: sans-serif;
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+// Datatable
+::ng-deep .p-datatable.p-datatable-sm .p-datatable-thead > tr > th:first-child {
+  border-top-left-radius: 8px;
+}
+::ng-deep .p-datatable.p-datatable-sm .p-datatable-thead > tr > th:last-child {
+  border-top-right-radius: 8px;
+}
+::ng-deep .p-datatable.p-datatable-sm .p-datatable-thead > tr > th {
+  text-align: center;
+  padding: 15px;
+}
+::ng-deep .p-datatable .p-paginator-bottom {
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+}
+::ng-deep .p-datatable.p-datatable-sm .p-datatable-tbody > tr > td {
+  padding: 0.25rem 1rem;
+}
+// Paginator
+::ng-deep .p-paginator {
+  padding: 2px !important;
+}
+::ng-deep .p-paginator .p-paginator-current {
+  font-size: 15px;
+}
+.table-card {
+  background-color: #ffffff;
+  border-radius: 6px;
+}

@@ -1,0 +1,24 @@
+<div class="p-3">
+
+  <p-pickList [source]="unassigned" [target]="assigned" [responsive]="true" [sourceStyle]="{'height':'52vh'}"
+    [targetStyle]="{'height':'52vh'}" filterBy="translate" sourceFilterPlaceholder="Buscar por descripción"
+    targetFilterPlaceholder="Buscar por descripción">
+    <ng-template let-role pTemplate="item">
+      <div *ngIf="role.translate">
+        {{ role.translate }}
+        <span style="color: var(--gray-600);"> [{{role.id}}] </span>
+      </div>
+    </ng-template>
+  </p-pickList>
+
+
+  <div class="flex mt-5 px-3">
+    <div>
+      <button pButton class="btn-cancel" type="button" (click)="dismiss()" label="Cancelar"></button>
+    </div>
+    <div class="ml-auto">
+      <button pButton type="submit" (click)="save()" label="Guardar"></button>
+    </div>
+  </div>
+
+</div>

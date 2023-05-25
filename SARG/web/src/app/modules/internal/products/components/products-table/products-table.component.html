@@ -1,0 +1,60 @@
+<p-table [paginator]="!loading && products.length > rows" [rows]="rows" [showCurrentPageReport]="!loading"
+  styleClass="p-datatable-sm" currentPageReportTemplate="Mostrando {first} de {last} de {totalRecords} items"
+  [rowsPerPageOptions]="[5,10,25,50]" [value]="products" selectionMode="single" dataKey="id"
+  (onRowSelect)="onRowSelect()" [loading]="loading">
+
+  <ng-template pTemplate="header">
+    <tr>
+      <th style="border-top-left-radius: 8px;">Imagen</th>
+      <th>Código</th>
+      <th>Descripción</th>
+      <th>Stock</th>
+      <th>Ubicación</th>
+      <th style="border-top-right-radius: 8px;">Acciones</th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-product>
+    <tr [pSelectableRow]="productSelected" (auxclick)="auxclick(product)" (dblclick)="dblclick(product)">
+      <td>
+         <div><img src="" alt="" srcset=""></div>
+      </td>
+      <td>
+        <div>
+          {{ product.code }}
+        </div>
+      </td>
+      <td>
+        <div>
+          {{ product.description }}
+        </div>
+      </td>
+      <td>
+        <div> {{ product.quantity }}
+        </div>
+      </td>
+      <td>
+        <div> {{ product.location }}
+        </div>
+      </td>
+      <td>
+        <div class="w-full align-items-center inline-flex gap-1">
+          <button pButton type="button" icon="pi pi-pencil" class="p-button-rounded p-button-info p-mr-2 btn-sm"
+            (click)="editProduct(product)" title="Editar producte"></button>
+          <button pButton type="button" icon="pi pi-times" class="p-button-rounded p-button-danger btn-sm"
+            (click)="deleteProduct(product)" title="Eliminar producte"></button>
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td colspan="7">
+        <div class="w-full py-4 text-center">No hay productos.</div>
+      </td>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="footer"></ng-template>
+</p-table>

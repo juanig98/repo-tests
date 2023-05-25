@@ -1,0 +1,114 @@
+<div class="p-3">
+  <form [formGroup]="clientForm">
+
+    <div class="grid p-fluid py-1 px-1">
+      <div class="col-12 md:col-6">
+        <span class="p-float-label">
+          <input id="firstName" type="text" pInputText formControlName="firstName">
+          <label for="firstName">Nombre</label>
+        </span>
+      </div>
+
+      <div class="col-12 md:col-6 pt-3">
+        <span class="p-float-label">
+          <input id="lastName" type="text" pInputText formControlName="lastName">
+          <label for="lastName">Apellido</label>
+        </span>
+      </div>
+
+      <div class="col-12 md:col-6 pt-3">
+        <span class="p-float-label">
+          <input id="businessName" type="text" pInputText formControlName="businessName">
+          <label for="businessName">Razón social</label>
+        </span>
+      </div>
+
+      <div class="col-12 md:col-3 pt-3">
+        <span class="p-float-label">
+          <input id="phoneNumber" type="text" pInputText formControlName="phoneNumber">
+          <label for="phoneNumber">Teléfono</label>
+        </span>
+      </div>
+
+      <div class="col-12 md:col-3 pt-3">
+        <span class="p-float-label">
+          <input id="phoneNumberAlt" type="text" pInputText formControlName="phoneNumberAlt">
+          <label for="phoneNumberAlt">Celular</label>
+        </span>
+      </div>
+
+      <div class="col-12 md:col-6 pt-3">
+        <span class="p-float-label">
+          <input id="addressName" type="text" pInputText formControlName="addressName">
+          <label for="addressName">Dirección</label>
+        </span>
+      </div>
+
+      <div class="col-12 md:col-2 pt-3">
+        <span class="p-float-label">
+          <input id="addressNumber" type="text" pInputText formControlName="addressNumber">
+          <label for="addressNumber">N°</label>
+        </span>
+      </div>
+
+      <div class="col-12 md:col-2 pt-3">
+        <span class="p-float-label">
+          <input id="addressFlat" type="text" pInputText formControlName="addressFlat">
+          <label for="addressFlat">Piso</label>
+        </span>
+      </div>
+
+      <div class="col-12 md:col-2 pt-3">
+        <span class="p-float-label">
+          <input id="addressDepartment" type="text" pInputText formControlName="addressDepartment">
+          <label for="addressDepartment">Depto</label>
+        </span>
+      </div>
+
+      <div class="col-12 md:col-4 pt-3">
+        <span class="p-float-label">
+          <p-dropdown id="taxpayerType" [options]="taxpayerTypes" formControlName="taxpayerType" optionLabel="description">
+          </p-dropdown>
+          <label for="taxpayerType">Tipo contribuyente</label>
+        </span>
+      </div>
+
+      <div class="col-12 md:col-4 pt-3">
+        <span class="p-float-label">
+          <p-dropdown id="documentType" [options]="documentTypes" formControlName="documentType"
+            optionLabel="description"></p-dropdown>
+          <label for="documentType">Tipo documento</label>
+        </span>
+      </div>
+
+      <div class="col-12 md:col-4 pt-3">
+        <span class="p-float-label">
+          <input id="documentNumber" type="text" pInputText formControlName="documentNumber">
+          <label for="documentNumber">N° documento</label>
+        </span>
+      </div>
+
+      <div class="col-12 md:col-4 pt-3">
+        <span class="p-float-label">
+          <input id="observationsAlt" type="text" pInputText formControlName="observationsAlt">
+          <label for="observationsAlt">Mecánico</label>
+        </span>
+      </div>
+
+      <div class="col-12 md:col-8 pt-3">
+        <span class="p-float-label">
+          <textarea rows="2" class="w-full" pInputTextarea formControlName="observations"
+            [autoResize]="true"></textarea>
+          <label for="taxType">Observaciones</label>
+        </span>
+      </div>
+    </div>
+
+    <div class="w-full flex mt-3">
+      <div></div>
+      <div class="ml-auto">
+        <p-button type="submit" label="Confirmar" (click)="submitClientForm()"> </p-button>
+      </div>
+    </div>
+  </form>
+</div>
